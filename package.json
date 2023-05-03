@@ -7,7 +7,7 @@
     "start:exercise-1": "tsc-watch --onSuccess \"node dist/basics/exercise-1/app.js \" "
   },
   "keywords": [],
-  "author": "",
+  "author": "Santiago Garcia.",
   "license": "ISC",
   "devDependencies": {
     "tsc-watch": "^6.0.4",
