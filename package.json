@@ -1,0 +1,16 @@
+{
+  "name": "javascript",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:exercise-1": "tsc-watch --onSuccess \"node dist/basics/exercise-1/app.js \" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.0.4"
+  }
+}
