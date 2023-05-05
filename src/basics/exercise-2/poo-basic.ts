@@ -51,7 +51,7 @@ class Auto2 {
     apagar() {
         console.log('Apagando');
     }
-    encender() {
+    private encender() {
         console.log(` Bienvenido ${this.marca}, tu color es: ${this.color}, tu peso es: ${this.peso} y tienes ${this.puertas} puertas.`);
     }
 }
