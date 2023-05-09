@@ -14,6 +14,9 @@ class Animal {
     }
     
 }
+class Acuático extends Animal{
+
+}
 // La herencia se da gracias a la palabra reservada extends.
 class Gato extends Animal {
     constructor(){
@@ -22,3 +25,24 @@ class Gato extends Animal {
         
     }
 }
+class Pato extends Acuático{
+    nadar (){
+        console.log('Nadando');
+    }
+}
+class Perro extends Animal{
+    constructor(){
+        super();
+        console.log('Creando un perro a partir de animal')
+    }
+}
+
+// Solo Puedo heredar de una sola clase.
+
+const cualquierAnimal: Animal = new Animal();
+
+const perrito = new Perro();
+
+const patoNuevo = new Pato();
+
+const animales = [cualquierAnimal, perrito, patoNuevo];

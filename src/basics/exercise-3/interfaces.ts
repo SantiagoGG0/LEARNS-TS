@@ -14,6 +14,7 @@ enum TipoContrato {
 
 // Definir un contrato para una clase.
 // Es una buena practica poner I mayúscula antes del nombre de una interfaz.
+// Las interfaces entre si no se pueden implementar, solo pueden heredar.
 interface IContrato {
     // Propiedades opcionales - No es obligatorio que quien implemente
     // escriba estas propiedades.
@@ -34,7 +35,18 @@ interface IContrato {
 
 
 }
-
+interface IClausula{
+    cumplirObjetivos(): boolean;
+}
+interface IClausulaJunior extends IClausula{
+    levanteManoATiempo(): boolean;
+}
+interface IClausulaMedium extends IClausula{
+    apoyarProcesosCríticos(): boolean;
+}
+interface IClausulaSenior extends IClausula{
+    apoyarFormación(): boolean;
+}
 // Para usar una interface tenemos la palabra reservada implements
 // Y la interfaz que queremos usar.
 class ContratoUltraCredit implements IContrato {
@@ -65,8 +77,8 @@ class ContratoUltraCredit implements IContrato {
     }
 
 }
-
-class ContratoGlobal implements IContrato {
+// En una clase puedo implementar varias interfaces.
+class ContratoGlobal implements IContrato, IClausula {
     salario?: number;
     fechaInicio?: Date;
     rol: Rol;
@@ -74,7 +86,9 @@ class ContratoGlobal implements IContrato {
     constructor() {
         this.rol = Rol.Middle;
     }
-
+    cumplirObjetivos(): boolean {
+        throw new Error('Method not implemented.')
+    }
     cancelar?(): void {
         console.log('Contrato cancelado.');
     }
@@ -101,7 +115,7 @@ listaContratos.forEach((contrato: IContrato) => {
     contrato.suspender(3);
     console.log ()
     console.log('====================')
-
+    
     if(contrato instanceof ContratoUltraCredit){
         console.log(contrato.tipoContrato);
         // Instance of nos dice el tipo de clase que estamos usando.(Instancia.)
